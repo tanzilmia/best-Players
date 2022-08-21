@@ -9,3 +9,22 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
+/* header section style */
+.header{
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(#43343413,#020205b4),url(../img/banner.jpg);
+    color: #fff;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

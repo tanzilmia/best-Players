@@ -36,3 +36,15 @@ img{
     font-size: 18px;
     margin-bottom: 8px;
 }
+#list{
+    height: 180px;
+}
+input{
+    border: 1px solid rgb(217, 217, 234);
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+.custom_btn{
+    width: 100%;
+}

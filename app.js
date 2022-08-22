@@ -62,7 +62,7 @@ totalCalculetbtn.addEventListener('click',function(){
     let managerCost = convertStrToValue('manager_cost')
     let coachCost = convertStrToValue('Coach_cost')
 
-    if(isNaN(managerCost) && isNaN(coachCost)){
+    if(isNaN(managerCost) || isNaN(coachCost)){
         alert('Enter Valid Number')
         clearField('manager_cost')
         clearField('Coach_cost')
@@ -72,6 +72,7 @@ totalCalculetbtn.addEventListener('click',function(){
     let total = playerExpen + managerCost + coachCost
     // shwo total 
     totalCost.innerText = total
+    totalCost.style.color = 'red'
     }
    
 })

@@ -27,28 +27,53 @@ function btnClick(btn){
 
 function convertStrToValue(elemnt){
     let inputValue = document.getElementById(elemnt)
-    let playerValue = parseInt(inputValue.value)
-    return playerValue
+    let Values = inputValue.value
+    let parstoNumber = parseInt(Values)
+    return parstoNumber
 }
 
+// clear field 
 
+function clearField(elemnt){
+    let inputValue = document.getElementById(elemnt)
+     inputValue.value = ''
+    
+}
 
 // calculation for palyers -----
 Calculetbtn.addEventListener('click',function(){
-    let TotalPlayers = Orderlist.children.length
     let playerCost = convertStrToValue('perPlayer_cost')
-    let cost = TotalPlayers * playerCost
-    // show value on the main part
-    playerExpence.innerText = cost
+    if(isNaN(playerCost)){
+        alert('Enter Valid Number')
+        clearField('perPlayer_cost')
+    }
+    else{
+        let TotalPlayers = Orderlist.children.length
+        let cost = TotalPlayers * playerCost
+      // show value on the main part
+       playerExpence.innerText = cost
+    }
+    
+    
 })
 // final calculation ------
 totalCalculetbtn.addEventListener('click',function(){
     let playerExpen = parseInt(playerExpence.innerText)
     let managerCost = convertStrToValue('manager_cost')
     let coachCost = convertStrToValue('Coach_cost')
+
+    if(isNaN(managerCost) && isNaN(coachCost)){
+        alert('Enter Valid Number')
+        clearField('manager_cost')
+        clearField('Coach_cost')
+        totalCost.innerText = '00'
+    }
+    else{
     let total = playerExpen + managerCost + coachCost
     // shwo total 
     totalCost.innerText = total
+    }
+   
 })
 
 

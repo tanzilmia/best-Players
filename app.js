@@ -1,14 +1,13 @@
 
-// global veribal
-
+// global veribal-----
 let Orderlist = document.getElementById('list');
 let perPlayecost = document.getElementById('perPlayer_cost');
 let playerExpence = document.getElementById('player_expence');
 let totalCost = document.getElementById('total_cost');
-// buttons select
+// buttons select----
 let Calculetbtn = document.getElementById('player_calculet');
 let totalCalculetbtn = document.getElementById('total_calculet');
-// a functio for btn click
+//  functio for btn click-----
 function btnClick(btn){
     let players = btn.parentNode.children[0].innerText
     let li = document.createElement('li')
@@ -23,7 +22,7 @@ function btnClick(btn){
     }
 }
 
-// string to value convertion 
+// string to value convertion ----
 
 function convertStrToValue(elemnt){
     let inputValue = document.getElementById(elemnt)
@@ -32,7 +31,7 @@ function convertStrToValue(elemnt){
     return parstoNumber
 }
 
-// clear field 
+// clear field -----
 
 function clearField(elemnt){
     let inputValue = document.getElementById(elemnt)
@@ -43,25 +42,25 @@ function clearField(elemnt){
 // calculation for palyers -----
 Calculetbtn.addEventListener('click',function(){
     let playerCost = convertStrToValue('perPlayer_cost')
+    // error controls
     if(isNaN(playerCost)){
         alert('Enter Valid Number')
         clearField('perPlayer_cost')
     }
-    else{
+    else{ 
+        // calculation----
         let TotalPlayers = Orderlist.children.length
         let cost = TotalPlayers * playerCost
       // show value on the main part
        playerExpence.innerText = cost
     }
-    
-    
 })
 // final calculation ------
 totalCalculetbtn.addEventListener('click',function(){
     let playerExpen = parseInt(playerExpence.innerText)
     let managerCost = convertStrToValue('manager_cost')
     let coachCost = convertStrToValue('Coach_cost')
-
+//    error controls----
     if(isNaN(managerCost) || isNaN(coachCost)){
         alert('Enter Valid Number')
         clearField('manager_cost')
@@ -69,12 +68,11 @@ totalCalculetbtn.addEventListener('click',function(){
         totalCost.innerText = '00'
     }
     else{
-    let total = playerExpen + managerCost + coachCost
-    // shwo total 
+        // calculation---
+    let total = playerExpen + managerCost + coachCost 
     totalCost.innerText = total
     totalCost.style.color = 'red'
     }
-   
 })
 
 

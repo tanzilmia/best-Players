@@ -40,11 +40,14 @@ img{
     height: 180px;
 }
 input{
-    border: 1px solid rgb(217, 217, 234);
+    border: 1px solid #d9d9ea;
     outline: none;
     padding: 5px;
     border-radius: 5px;
 }
 .custom_btn{
     width: 100%;
+}
+.bg{
+    background: #ecf8ff;
 }
